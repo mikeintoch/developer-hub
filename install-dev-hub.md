@@ -7,6 +7,7 @@
 To create a new Red Hat Developer Sandbox account please visit next [Red Hat Developer Article](https://developers.redhat.com/articles/2023/03/30/how-access-developer-sandbox-red-hat-openshift)
 
 ---
+Red Hat Develoepr Sandbox brings you the tools to interact with your namespace.
 
 - Open Red Hat Developer Sandbox Terminal.
 
@@ -14,6 +15,8 @@ To create a new Red Hat Developer Sandbox account please visit next [Red Hat Dev
 
 ---
 > Configuration files are available on my [Gist Repo](https://gist.githubusercontent.com/mikeintoch)
+
+---
 
 ### Install Microcks
 
@@ -41,16 +44,19 @@ On Terminal run following commands.
 curl https://gist.githubusercontent.com/mikeintoch/185bf33e9187164163adfc79093fee1a/raw > rhdh.yaml
 
 ```
+---
 ### Remove default authorization configuration
-Configuration file has a line to disable Authentication
+Configuration file has a line to disable Authentication.
 
 ```
 ...
           dangerouslyDisableDefaultAuthPolicy: true
 ...
 ```
+---
 
 If you want to enable authentication you can follow [Github Configuration](/github-auth.md)
+
 #### Modify values on configuration file
 
 > Microcks Plugin configuration.
@@ -102,6 +108,8 @@ apps.{your_sandbox_url}.openshiftapps.com is the value on your sandbox url, see 
 ```
 sed -i -e "s/CLUSTER_DOMAIN/apps.{your_sandbox_url}.openshiftapps.com/g" rhdh.yaml
 ```
+---
+
 ### Install Red Hat Developer Hub.
 
 - Add Helm Repository.
@@ -126,6 +134,7 @@ Default Authentication is disable, therefore you can enter Developer Hub using G
 
 ![Devhub](/images/6.png "DevHub")
 
+---
 
 ## Create Mock API's with Microcks
 
@@ -153,6 +162,7 @@ Default Authentication is disable, therefore you can enter Developer Hub using G
 - Click on **APIs|Services** and you can see API Pastry listed.
 ![Microcks](/images/14.png "Microcks")
 
+---
 
 ## Validate integration with Microcks and Red Hat Developer Hub
 
