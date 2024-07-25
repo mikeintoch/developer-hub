@@ -11,7 +11,7 @@ Red Hat Develoepr Sandbox brings you the tools to interact with your namespace.
 
 - Open Red Hat Developer Sandbox Terminal.
 
-![Terminal](/images/1.png "Open Console")
+<img src="/images/1.png" width="50%" height="50%" style="display: block; margin: 0 auto">
 
 ---
 > Configuration files are available on my [Gist Repo](https://gist.githubusercontent.com/mikeintoch)
@@ -28,8 +28,7 @@ oc create -f https://gist.githubusercontent.com/mikeintoch/895106c7c1005b34a157c
 
 As an output you install Microcks with non-persistent configuration.
 
-![Microcks Pod](/images/2.png "Microcks Pod")
-
+<img src="/images/2.png" width="50%" height="50%" style="display: block; margin: 0 auto">
 ---
 
 ### Install Red Hat Developer Hub using Helm Chart
@@ -101,8 +100,7 @@ sed -i -e "s/MICROCKS_URL/$(oc get route microcks-uber --output jsonpath={.spec.
 >```
 
 Modify **CLUSTER_DOMAIN** value using your domain:
-
-![URL DOMAIN](/images/3.png "URL Domain")
+<img src="/images/3.png" width="50%" height="50%" style="display: block; margin: 0 auto">
 
 apps.{your_sandbox_url}.openshiftapps.com is the value on your sandbox url, see the URL bar at the top of above figure to see where to find this information in your Developer Sandbox URL) and run following command.
 ```
@@ -124,43 +122,43 @@ helm install -f rhdh.yaml --version 1.2.1 redhat-developer-hub openshift-helm-ch
 
 As a result you can view Red Hat Developer Hub Pods Running.
 
-![Devhub](/images/4.png "DevHub")
+<img src="/images/4.png" width="50%" height="50%" style="display: block; margin: 0 auto">
 
 ## Open Developer Hub in a browser.
 
-![Devhub](/images/5.png "DevHub")
+<img src="/images/5.png" width="70%" height="70%" style="display: block; margin: 0 auto">
 
 Default Authentication is disable, therefore you can enter Developer Hub using Guest User.
 
-![Devhub](/images/6.png "DevHub")
+<img src="/images/6.png" width="70%" height="70%" style="display: block; margin: 0 auto">
 
 ---
 
 ## Create Mock API's with Microcks
 
 - Open Microcks console
-![Microcks](/images/7.png "Microcks")
+<img src="/images/7.png" width="70%" height="70%" style="display: block; margin: 0 auto">
 
 - Click on **Microcks Hub**
-![Microcks](/images/8.png "Microcks")
+<img src="/images/8.png" width="30%" height="30%" style="display: block; margin: 0 auto">
 
 - Click on **MicrocksIO Samples API**
-![Microcks](/images/9.png "Microcks")
+<img src="/images/9.png" width="70%" height="70%" style="display: block; margin: 0 auto">
 
 - Click on **Pastry API**
-![Microcks](/images/10.png "Microcks")
+<img src="/images/10.png" width="70%" height="70%" style="display: block; margin: 0 auto">
 
 - Click on **Install**
-![Microcks](/images/11.png "Microcks")
+<img src="/images/11.png" width="70%" height="70%" style="display: block; margin: 0 auto">
 
 - Click on **Direct Import**
-![Microcks](/images/12.png "Microcks")
+<img src="/images/12.png" width="70%" height="70%" style="display: block; margin: 0 auto">
 
 - API is successfully installed
-![Microcks](/images/13.png "Microcks")
+<img src="/images/13.png" width="70%" height="70%" style="display: block; margin: 0 auto">
 
 - Click on **APIs|Services** and you can see API Pastry listed.
-![Microcks](/images/14.png "Microcks")
+<img src="/images/14.png" width="70%" height="70%" style="display: block; margin: 0 auto">
 
 ---
 
@@ -169,16 +167,16 @@ Default Authentication is disable, therefore you can enter Developer Hub using G
 Now Developer Hub is able to show APIs you create on Microcks through plugin previously installed.
 
 - Open your Red Hat Developer Hub console in the left menu click on APIs
-![DevHub](/images/15.png "DevHub")
+<img src="/images/15.png" width="70%" height="70%" style="display: block; margin: 0 auto">
 
 - RHDH shows APIs listed then click on the name of the API.
-![DevHub](/images/16.png "DevHub")
+<img src="/images/16.png" width="70%" height="70%" style="display: block; margin: 0 auto">
 
 - Now you can watch detail of the Pastry API.
-![DevHub](/images/17.png "DevHub")
+<img src="/images/17.png" width="70%" height="70%" style="display: block; margin: 0 auto">
 
 - Click on Definition tab and you can watch Swagger module now you can try out API directly on Red Hat Developer Hub.
-![DevHub](/images/18.png "DevHub")
+<img src="/images/18.png" width="70%" height="70%" style="display: block; margin: 0 auto">
 
 
 You can add more APIs on Microcks and the plugin discover and listed on Red Hat Developer Hub.
