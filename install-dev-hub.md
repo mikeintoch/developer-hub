@@ -168,7 +168,7 @@ Default Authentication is disable, therefore you can enter Developer Hub using G
 Now Developer Hub is able to show APIs you create on Microcks through plugin previously installed.
 
 - Open your Red Hat Developer Hub console in the left menu click on APIs
-<img src="/images/15.png" width="70%" height="70%" style="display: block; margin: 0 auto">
+<img src="/images/15.png" width="30%" height="30%" style="display: block; margin: 0 auto">
 
 - RHDH shows APIs listed then click on the name of the API.
 <img src="/images/16.png" width="70%" height="70%" style="display: block; margin: 0 auto">
