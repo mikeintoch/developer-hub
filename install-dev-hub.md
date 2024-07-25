@@ -100,6 +100,7 @@ sed -i -e "s/MICROCKS_URL/$(oc get route microcks-uber --output jsonpath={.spec.
 >```
 
 Modify **CLUSTER_DOMAIN** value using your domain:
+
 <img src="/images/3.png" width="50%" height="50%" style="display: block; margin: 0 auto">
 
 apps.{your_sandbox_url}.openshiftapps.com is the value on your sandbox url, see the URL bar at the top of above figure to see where to find this information in your Developer Sandbox URL) and run following command.
