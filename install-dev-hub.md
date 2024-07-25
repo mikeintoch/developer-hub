@@ -12,10 +12,8 @@ To create a new Red Hat Developer Sandbox account please visit next [Red Hat Dev
 
 ![Terminal](/images/1.png "Open Console")
 
-
 ---
 > Configuration files are available on my [Gist Repo](https://gist.githubusercontent.com/mikeintoch)
-
 
 ### Install Microcks
 
@@ -43,6 +41,16 @@ On Terminal run following commands.
 curl https://gist.githubusercontent.com/mikeintoch/185bf33e9187164163adfc79093fee1a/raw > rhdh.yaml
 
 ```
+### Remove default authorization configuration
+Configuration file has a line to disable Authentication
+
+```
+...
+          dangerouslyDisableDefaultAuthPolicy: true
+...
+```
+
+If you want to enable authentication you can follow [Github Configuration](/github-auth.md)
 #### Modify values on configuration file
 
 > Microcks Plugin configuration.
@@ -94,7 +102,6 @@ apps.{your_sandbox_url}.openshiftapps.com is the value on your sandbox url, see 
 ```
 sed -i -e "s/CLUSTER_DOMAIN/apps.{your_sandbox_url}.openshiftapps.com/g" rhdh.yaml
 ```
-
 ### Install Red Hat Developer Hub.
 
 - Add Helm Repository.
@@ -107,8 +114,61 @@ helm repo add openshift-helm-charts https://charts.openshift.io/
 helm install -f rhdh.yaml --version 1.2.1 redhat-developer-hub openshift-helm-charts/redhat-developer-hub
 ```
 
-As a result you can view Red HAt Developer Hub Pods Running.
+As a result you can view Red Hat Developer Hub Pods Running.
 
 ![Devhub](/images/4.png "DevHub")
 
+## Open Developer Hub in a browser.
 
+![Devhub](/images/5.png "DevHub")
+
+Default Authentication is disable, therefore you can enter Developer Hub using Guest User.
+
+![Devhub](/images/6.png "DevHub")
+
+
+## Create Mock API's with Microcks
+
+- Open Microcks console
+![Microcks](/images/7.png "Microcks")
+
+- Click on **Microcks Hub**
+![Microcks](/images/8.png "Microcks")
+
+- Click on **MicrocksIO Samples API**
+![Microcks](/images/9.png "Microcks")
+
+- Click on **Pastry API**
+![Microcks](/images/10.png "Microcks")
+
+- Click on **Install**
+![Microcks](/images/11.png "Microcks")
+
+- Click on **Direct Import**
+![Microcks](/images/12.png "Microcks")
+
+- API is successfully installed
+![Microcks](/images/13.png "Microcks")
+
+- Click on **APIs|Services** and you can see API Pastry listed.
+![Microcks](/images/14.png "Microcks")
+
+
+## Validate integration with Microcks and Red Hat Developer Hub
+
+Now Developer Hub is able to show APIs you create on Microcks through plugin previously installed.
+
+- Open your Red Hat Developer Hub console in the left menu click on APIs
+![DevHub](/images/15.png "DevHub")
+
+- RHDH shows APIs listed then click on the name of the API.
+![DevHub](/images/16.png "DevHub")
+
+- Now you can watch detail of the Pastry API.
+![DevHub](/images/17.png "DevHub")
+
+- Click on Definition tab and you can watch Swagger module now you can try out API directly on Red Hat Developer Hub.
+![DevHub](/images/18.png "DevHub")
+
+
+You can add more APIs on Microcks and the plugin discover and listed on Red Hat Developer Hub.
