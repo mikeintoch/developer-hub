@@ -55,6 +55,10 @@ Your application is now running with its default configuration.
 
 ### Disable Authentication.
 
+>By default Red Hat Developer Hub enable authentication for test purposes you can disable.
+>
+>If you want to configure Authentication, please go to [Configure GitHub Authentication](/assets/tutorials/github-auth.md)
+
 - Execute in Developer Sandbox Terminal following commands
 
 ```shell
@@ -97,5 +101,3 @@ helm upgrade --reuse-values redhat-developer-hub openshift-helm-charts/redhat-de
 Default Authentication is disable, therefore you can enter Developer Hub using Guest User.
 
 <img src="/assets/images/6.png" width="70%" height="70%" style="display: block; margin: 0 auto">
-
-### Enjoy!
