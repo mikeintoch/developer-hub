@@ -55,7 +55,7 @@ Your application is now running with its default configuration.
 
 ### Disable Authentication.
 
-- Execute in Develoepr Sandbox Terminal following commands
+- Execute in Developer Sandbox Terminal following commands
 
 ```shell
 git clone https://github.com/mikeintoch/developer-hub.git
@@ -89,6 +89,8 @@ helm upgrade --reuse-values redhat-developer-hub openshift-helm-charts/redhat-de
 ```
 
 ## Open Developer Hub in a browser.
+
+- For now, select the Route icon in the top-right of the roundel for the developer-hub application and the follwing screen will appear in a separate tab.
 
 <img src="/assets/images/5.png" width="70%" height="70%" style="display: block; margin: 0 auto">
 
