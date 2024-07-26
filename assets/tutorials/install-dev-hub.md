@@ -94,7 +94,7 @@ helm upgrade --reuse-values redhat-developer-hub openshift-helm-charts/redhat-de
 
 ## Open Developer Hub in a browser.
 
-- For now, select the Route icon in the top-right of the roundel for the developer-hub application and the follwing screen will appear in a separate tab.
+- For now, select the Route icon in the top-right of the roundel for the developer-hub application and the following screen will appear in a separate tab.
 
 <img src="/assets/images/5.png" width="70%" height="70%" style="display: block; margin: 0 auto">
 
