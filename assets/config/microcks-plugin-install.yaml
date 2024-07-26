@@ -1,0 +1,24 @@
+global:
+  dynamic:
+    includes:
+      - dynamic-plugins.default.yaml
+    plugins:
+      - integrity: >-
+          sha512-/Pre7TmeJkVgPrdfTiG0wcYpZ1KM14/AE8kSwUfVGtae4k4/lqaUfMnexnp75ujXHItm+iuSWvCRNhOvEw3PuA==
+        package: '@microcks/microcks-backstage-provider@0.0.5'
+        pluginConfig:
+          catalog:
+            providers:
+              microcksApiEntity:
+                dev:
+                  addOpenAPIServerUrl: true
+                  baseUrl: https://microcks-uber-mdelgadi-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com
+                  ownerLabel: team
+                  schedule:
+                    frequency:
+                      minutes: 2
+                    timeout:
+                      minutes: 1
+                  serviceAccount: microcks-serviceaccount
+                  serviceAccountCredentials: ab54d329-e435-41ae-a900-ec6b3fe15c54
+                  systemLabel: domain

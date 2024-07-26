@@ -1,0 +1,23 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: app-config-rhdh
+data:
+  app-config-rhdh.yaml: |
+    app:
+      title: My Red Hat Developer Hub
+      baseUrl: https://redhat-developer-hub-mdelgadi-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/
+    integrations:
+     github:
+       - host: github.com
+         token: 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
+    auth:
+     allowGuestAccess: true
+     environment: development
+     providers:
+       github:
+         development:
+           clientId: Iv23livIYiwti8awGuP5
+           clientSecret: 38ae5a1933dc0e9bd02533cd43b3f3a8615b07d8
+    enabled:
+      github: true
