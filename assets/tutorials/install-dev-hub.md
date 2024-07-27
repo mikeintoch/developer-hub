@@ -1,4 +1,4 @@
-### Installation Red Hat Developer Hub on Red Hat Developer Sandbox
+### Install Red Hat Developer Hub on Red Hat Developer Sandbox
 
 ---
 
@@ -53,7 +53,7 @@ You can view Red Hat Developer Hub Pods Running.
 Your application is now running with its default configuration.
 
 
-### Disable Authentication.
+### Disable Authentication. **OPTIONAL**
 
 >By default Red Hat Developer Hub enable authentication for test purposes you can disable.
 >
@@ -64,9 +64,7 @@ Your application is now running with its default configuration.
 ```shell
 git clone https://github.com/mikeintoch/developer-hub.git
 
-cd developer-hub
-
-oc create -f ./assets/config/cm-disable-auth.yaml
+oc create -f ./developer-hub/assets/config/cm-disable-auth.yaml
 
 ```
 
@@ -101,3 +99,5 @@ helm upgrade --reuse-values redhat-developer-hub openshift-helm-charts/redhat-de
 Default Authentication is disable, therefore you can enter Developer Hub using Guest User.
 
 <img src="/assets/images/6.png" width="70%" height="70%" style="display: block; margin: 0 auto">
+
+You are now ready to show the capabilities of Red Hat Developer Hub.
