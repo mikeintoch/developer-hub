@@ -89,11 +89,11 @@ helm upgrade --reuse-values redhat-developer-hub openshift-helm-charts/redhat-de
 
 <img src="/assets/images/5.png" width="70%" height="70%" style="display: block; margin: 0 auto">
 
-Under **Profile** (which should say Guest), click the three-button icon, then select Sign Out. This will take you to a login page that has two options.
-
-8. Now choose GitHub to log in and follow the prompts. If your configuration is correct, you will be logged back onto the homepage. Select Settings in the bottom left. The screen should now look similar to the one following figure. 
+8. Under **Profile** (which should say Guest), click the three-button icon, then select Sign Out. This will take you to a login page that has two options.
 
 <img src="/assets/images/19.png" width="70%" height="70%" style="display: block; margin: 0 auto">
+
+Now choose GitHub to log in and follow the prompts. If your configuration is correct, you will be logged back onto the homepage. Select Settings in the bottom left. The screen should now look similar to the one following figure. 
 
 You are now ready to show the capabilities of Red Hat Developer Hub.
 

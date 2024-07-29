@@ -13,8 +13,6 @@ As an output you install Microcks with non-persistent configuration.
 <img src="/images/2.png" width="50%" height="50%" style="display: block; margin: 0 auto">
 ---
 
----
-
 ## Create Mock API's with Microcks
 
 - Open Microcks console
@@ -42,8 +40,50 @@ As an output you install Microcks with non-persistent configuration.
 <img src="/images/14.png" width="70%" height="70%" style="display: block; margin: 0 auto">
 
 ---
+## Install Microcks Plugin on Developer Hub.
+
+- Execute in Developer Sandbox Terminal following commands
+
+```shell
+git clone https://github.com/mikeintoch/developer-hub.git
+
+```
+- Perform values on file microcks-plugin-install.yaml on MICROCKS_URL on
+
+```shell
+...
+            providers:
+              microcksApiEntity:
+                dev:
+                  addOpenAPIServerUrl: true
+                  baseUrl: https://MICROCKS_URL
+                  ownerLabel: team
+                  schedule:
+                    frequency:
+...
+```
+- Run following command.
+
+```shell
+cd developer-hub
+
+sed -i -e "s/MICROCKS_URL/$(oc get route microcks-uber --output jsonpath={.spec.host})/g" assets/config/microcks-plugin-install.yaml
+```
+
+- Upgrade helm chart with new configuration.
+
+```shell
+cd developer-hub
+
+helm upgrade --reuse-values redhat-developer-hub openshift-helm-charts/redhat-developer-hub -f assets/config/microcks-plugin-install.yaml
+```
+
+- Once the application has redeployed. The application will restart and Developer Hub is ready to wirk with Microcks.
+---
 
 ## Validate integration with Microcks and Red Hat Developer Hub
+
+Go back and refresh the web page with the Developer Hub portal.
 
 Now Developer Hub is able to show APIs you create on Microcks through plugin previously installed.
 
