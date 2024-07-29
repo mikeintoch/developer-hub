@@ -60,7 +60,7 @@ As an output you install Microcks with non-persistent configuration.
 git clone https://github.com/mikeintoch/developer-hub.git
 
 ```
-- Perform values on file microcks-plugin-install.yaml on MICROCKS_URL on
+- Perform values on file microcks-plugin-install.yaml change MICROCKS_URL
 
 ```shell
 ...
@@ -74,7 +74,7 @@ git clone https://github.com/mikeintoch/developer-hub.git
                     frequency:
 ...
 ```
-- Run following command.
+- Run following command on Developer Sandbox Terminal.
 
 ```shell
 cd developer-hub
