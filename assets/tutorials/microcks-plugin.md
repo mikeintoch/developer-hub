@@ -1,5 +1,17 @@
 # Integrate Microcks with Red Hat Developer Hub
 
+# Prerequirements.
+
+Before you start this tutorial, First you need to configure authentication
+
+You can follow two different paths.
+
+- [Disable Default authentication.](/assets/tutorials/install-dev-hub.md#disable-authentication-optional)
+
+or
+
+- [Configure Github Authentication](/assets/tutorials/github-auth.md)
+
 ### Install Microcks
 
 On Terminal run following commands.
