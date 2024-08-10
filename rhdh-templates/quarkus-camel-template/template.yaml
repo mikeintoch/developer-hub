@@ -1,0 +1,92 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+Kind: Template
+metadata:
+  name: quarkus-camel-service
+  title: Apache Camel service developed using Quarkus.
+  description: Create a simple microservice using Apache Camel and Quarkus.
+  tags:
+    - recommended
+    - java
+    - quarkus
+    - camel
+    - maven
+  spec:
+    owner: rhdh
+    type: service
+    parameters:
+      - title: Provide Information for Application
+        required:
+          - component_id
+          - java_package_name
+        properties:
+          component_id:
+            title: Name
+            type: string
+            description: Unique name of the component
+            default: my-quarkus-app
+            ui:field: EntityNamePicker
+            maxLength: 23
+          group_id:
+            title: Group Id
+            type: string
+            default: mx.redhat
+            description: Maven Group Id
+          artifact_id:
+            title: Artifact Id
+            type: string
+            default: quarkus-app
+            description: Maven Artifact Id
+          java_package_name:
+            title: Java Package Name
+            default: mx.redhat
+            type: string
+            description: Name for the java package. eg (com.redhat.blah)
+          description:
+            title: Description
+            type: string
+            description: Help others understand what this service is for.
+            default: A cool service with Apache Camel using Quarkus.
+      - title: Choose a location
+        required:
+          - repoUrl
+        properties:
+          repoUrl:
+            title: Repository Location
+            type: string
+            ui:field: RepoUrlPicker
+            ui:options:
+              allowedHosts:
+                - github.com
+    steps:
+      - id: template
+        name: Fetch Skeleton + Template
+        action: fetch:template
+        input:
+          url: ./skeleton
+          copyWithoutRender:
+            - .github/workflows/*
+          values:
+            component_id: ${{ parameters.component_id }}
+            description:  ${{ parameters.description }}
+            destination: ${{ parameters.repoUrl | parseRepoUrl }}
+            java_package_name: ${{ parameters.java_package_name }}
+            owner: ${{ parameters.owner }}
+            # cluster: {{ cluster_subdomain }}
+            host: ${{ parameters.repo.host }}
+            destination_own: ${{ parameters.repo.owner }}
+
+      - id: publish
+        name: Publish
+        action: publish:github
+        input:
+          allowedHosts:
+            - github.com
+          description: This is ${{ parameters.component_id }}
+          repoUrl: ${{ parameters.repoUrl }}
+
+      - id: register
+        name: Register
+        action: catalog:register
+        input:
+          repoContentsUrl: ${{ steps.publish.output.repoContentsUrl }}
+          catalogInfoPath: "/catalog-info.yaml"

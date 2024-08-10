@@ -1,0 +1,77 @@
+openapi: 3.0.3
+info:
+  title: Fruits and Legumes -  Open API 3.0
+  description: |-
+    Fruits and Legumes example API developed with Quarkkus and Apache Camel.
+  version: 1.0-SNAPSHOT
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+- url: http://localhost:8080/
+  description: Auto generated value
+- url: http://0.0.0.0:8080
+  description: Auto generated value
+tags:
+  - name: fruits
+    description: Everything about your Fruits
+  - name: legumes
+    description: Everything about your Legumes
+paths:
+  /fruits:
+    post:
+      tags:
+        - fruits
+      summary: Add a new fruit.
+      description: Add a new fruit.
+      requestBody:
+        description: Add a new Fruit.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Fruit'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fruit'
+    get:
+      tags:
+        - fruits
+      summary: Get all Fruits.
+      description: Get all Fruits
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fruit'
+      
+  /legumes:
+    get:
+      tags:
+        - legumes
+      summary: Get All Legumes.
+      description: Get all Legumes
+      responses:
+        '200':
+          description: Successful operation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fruit'
+components:
+  schemas:
+    Fruit:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Apple
+        description:
+          type: string
+          example: Winter fruit
