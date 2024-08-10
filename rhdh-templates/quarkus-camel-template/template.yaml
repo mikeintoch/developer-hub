@@ -71,7 +71,7 @@ spec:
           artifact_id: ${{ parameters.artifact_id }}
           java_package_name: ${{ parameters.java_package_name }}
           group_id: ${{ parameters.group_id }}
-          owner: ${{ parameters.owner }}
+          owner: rhdh
           # cluster: {{ cluster_subdomain }}
           destination_own: ${{ parameters.repo.owner }}
   
