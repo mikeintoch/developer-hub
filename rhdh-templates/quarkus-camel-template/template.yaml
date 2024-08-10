@@ -68,11 +68,9 @@ metadata:
           values:
             component_id: ${{ parameters.component_id }}
             description:  ${{ parameters.description }}
-            destination: ${{ parameters.repoUrl | parseRepoUrl }}
             java_package_name: ${{ parameters.java_package_name }}
-            owner: ${{ parameters.owner }}
+            owner: ${{ user.entity.metadata.name }}
             # cluster: {{ cluster_subdomain }}
-            host: ${{ parameters.repo.host }}
             destination_own: ${{ parameters.repo.owner }}
 
       - id: publish
