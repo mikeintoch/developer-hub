@@ -68,7 +68,9 @@ metadata:
           values:
             component_id: ${{ parameters.component_id }}
             description:  ${{ parameters.description }}
+            artifact_id: ${{ parameters.artifact_id }}
             java_package_name: ${{ parameters.java_package_name }}
+            group_id: ${{ parameters.group_id }}
             owner: ${{ user.entity.metadata.name }}
             # cluster: {{ cluster_subdomain }}
             destination_own: ${{ parameters.repo.owner }}
