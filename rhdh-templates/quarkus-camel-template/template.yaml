@@ -1,5 +1,5 @@
 apiVersion: scaffolder.backstage.io/v1beta3
-Kind: Template
+kind: Template
 metadata:
   name: quarkus-camel-service
   title: Apache Camel service developed using Quarkus.
