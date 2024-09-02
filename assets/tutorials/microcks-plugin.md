@@ -62,7 +62,7 @@ git clone https://github.com/mikeintoch/developer-hub.git
 ```
 - Perform values on file microcks-plugin-install.yaml change MICROCKS_URL
 
-```shell
+```yaml
 ...
             providers:
               microcksApiEntity:
@@ -90,7 +90,7 @@ cd developer-hub
 helm upgrade --reuse-values redhat-developer-hub openshift-helm-charts/redhat-developer-hub -f assets/config/microcks-plugin-install.yaml
 ```
 
-- Once the application has redeployed. The application will restart and Developer Hub is ready to wirk with Microcks.
+- Once the application has redeployed. The application will restart and Developer Hub is ready to work with Microcks.
 ---
 
 ## Validate integration with Microcks and Red Hat Developer Hub
